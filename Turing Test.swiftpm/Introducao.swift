@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Introducao: View {
-    @State private var showingSheet = false
+    @State private var irTelacheia = false
 
     var body: some View {
         
@@ -12,17 +12,14 @@ struct Introducao: View {
                         .frame(width: 600)
                         .padding()
                        
-                    Text("Amo beatriz cordeiro")
+                    Text("Swift doesn’t let us create one stored property that refers to other stored properties, because it would cause problems when the object is created. This means trying to create a TextField bound to a local property will cause problems.")
                     .padding()
+                    .font(.body)
                 
                     Button("Next Page "){
-                        showingSheet.toggle()
+                        self.irTelacheia.toggle()
                     }
-                    .sheet(isPresented: $showingSheet){
-                        Desenvolvimento()
-                    }
-                       
-                    
+                    .fullScreenCover(isPresented: $irTelacheia, content: Explicacao.init)
                     .frame(width: 600)
                     .padding()
                     .font(.system(size: 25))
@@ -31,5 +28,6 @@ struct Introducao: View {
             .padding()
                 
     }
-}
 
+
+}
