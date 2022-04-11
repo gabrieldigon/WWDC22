@@ -1,11 +1,10 @@
 import SwiftUI
 
 struct Introducao: View {
-    @State var tapCount = 0
+    @State private var showingSheet = false
 
     var body: some View {
         
-    
             Form{
 
                     Text("Turing Test")
@@ -13,18 +12,23 @@ struct Introducao: View {
                         .frame(width: 600)
                         .padding()
                        
-                    Text("Groups don’t actually change the way your user interface looks, they just let")
+                    Text("Amo beatriz cordeiro")
                     .padding()
-                    Button("Tap Count: \(tapCount)") {
-                        self.tapCount += 1
+                
+                    Button("Next Page "){
+                        showingSheet.toggle()
                     }
+                    .sheet(isPresented: $showingSheet){
+                        Desenvolvimento()
+                    }
+                       
+                    
                     .frame(width: 600)
                     .padding()
                     .font(.system(size: 25))
                     .buttonStyle(.borderedProminent)
             }
             .padding()
-       
                 
     }
 }
