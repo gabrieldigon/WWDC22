@@ -18,9 +18,11 @@ struct Chatbot: View {
         }
         .padding(.horizontal, 10)
         .padding(.bottom, -80)
-            HStack{
-                Button("<Back"){
-                    presentationMode.wrappedValue.dismiss()
+        
+        
+        HStack{
+            Button("<Back"){
+                presentationMode.wrappedValue.dismiss()
             }
             .font(.system(size: 19))
                 Spacer()
@@ -66,7 +68,7 @@ struct Chatbot: View {
                         HStack{
                         let newMessage = message.replacingOccurrences(of:"[Bot]",with: "")
                             Text(newMessage)
-                                .font(.system(size: 25))
+                            .font(.system(size: 25))
                             .padding()
                             .background(Color.gray.opacity(0.15))
                             .cornerRadius(50)
@@ -88,7 +90,7 @@ struct Chatbot: View {
           
            
                 TextField("Type something", text: $messageText)
-                .font(.system(size: 25))
+                    .font(.system(size: 25))
                     .padding()
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
