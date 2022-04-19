@@ -14,7 +14,7 @@ struct Explicacao: View {
                             .frame(width: 600)
                             .padding()
                            
-                        Text("Swift doesn’t let us create one stored property that refers to other stored properties, because it would cause problems when the object is created. This means trying to create a TextField bound to a local property will cause problems.")
+                        Text("EXPLICAÇÃO")
                         .padding()
                         .font(.body)
                         Button("Next Page ") {

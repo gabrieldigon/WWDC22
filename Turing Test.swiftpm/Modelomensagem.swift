@@ -2,12 +2,37 @@
 import SwiftUI
 
 struct Chatbot: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var irTelacheia = false
     @State private var messageText = ""
     @State var messages: [String] = ["Hi there,Gabriel told me you'd come,what do you want?"]
-    @State var count: Int = 0
     var body: some View {
         
-        VStack {
+        HStack{
+            Spacer()
+            Button("Next>"){
+            self.irTelacheia.toggle()
+        }
+        .fullScreenCover(isPresented: $irTelacheia, content: Explicacao.init)
+        .font(.system(size: 19))
+        }
+        .padding(.horizontal, 10)
+        .padding(.bottom, -80)
+            HStack{
+                Button("<Back"){
+                    presentationMode.wrappedValue.dismiss()
+            }
+            .font(.system(size: 19))
+                Spacer()
+            }
+            .padding(.horizontal, 10)
+            .padding(.bottom, -80)
+            
+        
+       
+        VStack{
+            
+            
             HStack{
             Image("person.circle")
                     .resizable()
@@ -17,16 +42,17 @@ struct Chatbot: View {
             }
            
             
-            //nesse scrollview eu to printando o vetor
+         
             ScrollView {
                 
                 ForEach(messages, id: \.self) { message in
-                    // If the message contains [USER], that means it's us
+                   
                     if message.contains("[USER]") {
                         let newMessage = message.replacingOccurrences(of:"[USER]", with: "")
                         HStack{
                             Spacer()
                             Text(newMessage)
+                                .font(.system(size: 25))
                                 .padding()
                                 .foregroundColor(Color.white)
                                 .background(Color.blue.opacity(0.8))
@@ -40,6 +66,7 @@ struct Chatbot: View {
                         HStack{
                         let newMessage = message.replacingOccurrences(of:"[Bot]",with: "")
                             Text(newMessage)
+                                .font(.system(size: 25))
                             .padding()
                             .background(Color.gray.opacity(0.15))
                             .cornerRadius(50)
@@ -58,9 +85,10 @@ struct Chatbot: View {
             .background(Color.gray.opacity(0.1))
           
             
-            // aqui e a parte do text field
+          
            
                 TextField("Type something", text: $messageText)
+                .font(.system(size: 25))
                     .padding()
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
@@ -68,15 +96,8 @@ struct Chatbot: View {
                         mandarResposta(message: messageText)
                     }
                 
-                Button {
-                    mandarResposta(message: messageText)
-                } label: {
-                    Image(systemName: "paperplane.fill")
-                }
-
-        }
-        .padding()
         
+        }
     }
     
     func mandarResposta(message: String) {
