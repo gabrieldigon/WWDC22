@@ -8,16 +8,16 @@ struct Desenvolvimento: View {
     
                 Form{
 
-                        Text("Desenvolvimento")
+                        Text("About B.O.T.E")
                             .font(.title)
                             .frame(width: 600)
                             .padding()
                            
-                        Text("Swift doesn’t let us create one stored property that refers to other stored properties, because it would cause problems when the object is created. This means trying to create a TextField bound to a local property will cause problems.")
+                        Text("Well,talking about our friend B.O.T.E there is a reason it didn't pass the Turing Test,it was not programmed utilizing machinelearning,he just guides the user through a path but that doesn't really mean it is not smart, after all intelligence🧠is a complicated concept, the Test itself just proves that a robot can IMITATE (just like the game) human behavior which in my caseit’s pretty important since I want to have a friendly robot by my side🤖.\n\nSo I promised B.O.T.E that I would make him smarter and there is always a WWDC🍎 next year! \n\nFor now I hope you could understand what is the Turing Test and how it works!\n\nTo finish this playground I’ll let you talk to him again if you want 😀(It's a slighted improved version that comes with some questions that he understands better, but fell free to explore!)")
                         .padding()
-                        .font(.body)
+                        .font(.system(size: 25))
                         
-                        Button("Next Page "){
+                        Button("B.O.T.E "){
                             self.irTelacheia.toggle()
                         }
                         .fullScreenCover(isPresented: $irTelacheia, content: Chatbot.init)

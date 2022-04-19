@@ -36,7 +36,7 @@ func pegarResposta(message: String,chat: [String]) -> String {
         modresposta += 1
         modresposta2 = 0
         modresposta = 5
-        return "THE BUTTON"
+        return "THE BUTTON-next"
     }
     
     else {
