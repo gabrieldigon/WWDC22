@@ -14,6 +14,8 @@ struct Desenvolvimento: View {
                             .padding()
                            
                         Text("Well, talking about our friend B.O.T.E there is a reason it didn't pass the Turing Test: ME, I’m still learning, so I promised B.O.T.E that I would make him smarter after all there is always a WWDC🍎 next year! \n\nFor now I hope you could understand what is the Turing Test and how it works!\n\nTo finish this playground I’ll let you talk to him again if you want 😀(It's a slighted improved version that comes with some questions that he understands better, but fell free to explore!")
+                    
+                   
                         .padding()
                         .font(.system(size: 25))
                         

@@ -110,7 +110,7 @@ struct BOTE: View {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
-                    messages.append("[Bot]"+pegarResposta(message: message,chat: messages))
+                    messages.append("[Bot]"+pegarRespostaSmart(message: message))
                 }
             }
         }

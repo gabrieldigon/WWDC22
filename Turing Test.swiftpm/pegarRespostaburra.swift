@@ -1,4 +1,3 @@
-import Foundation
 var modresposta = 0
 var modresposta2 = 1
 
