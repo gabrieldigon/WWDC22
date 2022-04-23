@@ -14,24 +14,34 @@ struct BOTE: View {
             
             
             HStack{
-                Button("<Back"){
+                Button("Back"){
                     presentationMode.wrappedValue.dismiss()
                 }
-                .font(.system(size: 19))
+                .font(.system(size: 25))
+                .buttonStyle(.borderedProminent)
                 
                 
                 Spacer()
                 
                 Image("person.circle")
                     .resizable()
-                    .frame(width:  30, height: 30)
-                Text("B.O.T.E")
-                    .font(.system(size: 25))
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .cornerRadius(20)
+                Text("Friend")
+                    .font(.system(size: 40))
+                    .frame(alignment:.center)
                 Spacer()
-                
+                Button("?"){
+                    showingSheet.toggle()
+                }
+                .font(.system(size: 40))
+                .frame(width: 40, height: 40)
+                .cornerRadius(20)
+                .sheet(isPresented: $showingSheet) {
+                            smartQuestions()
+                        }
             }
             .padding()
-            
             
             ScrollView {
                 
@@ -87,15 +97,12 @@ struct BOTE: View {
                         mandarResposta(message: messageText)
                     }
                 
-                Button("?"){
-                    showingSheet.toggle()
-                }
-                .font(.system(size: 30))
-                .padding()
-                .sheet(isPresented: $showingSheet) {
-                            smartQuestions()
-                        }
-                
+                Image("paperplane")
+                    .foregroundColor(.blue)
+                    .padding()
+                    .onTapGesture {
+                        mandarResposta(message: messageText)
+                    }
             }
             
         }

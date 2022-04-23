@@ -14,35 +14,34 @@ struct Chatbot: View {
             
             
             HStack{
-                Button("<Back"){
+                Button("Back"){
                     presentationMode.wrappedValue.dismiss()
                 }
-                .font(.system(size: 19))
-                
+                .font(.system(size: 25))
+                .buttonStyle(.borderedProminent)
                 
                 Spacer()
                 
                 Image("person.circle")
                     .resizable()
-                    .frame(width:  30, height: 30)
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .cornerRadius(20)
                 Text("Friend")
-                    .font(.system(size: 25))
+                    .font(.system(size: 40))
+                    .frame(alignment:.center)
                 Spacer()
-                
-                Button("Next>"){
+                Button("Next"){
                     self.irTelacheia.toggle()
                 }
                 .fullScreenCover(isPresented: $irTelacheia, content: Explicacao.init)
-                .font(.system(size: 19))
+                .font(.system(size: 25))
+                .buttonStyle(.borderedProminent)
+                
                 
             }
             .padding()
             
-            
-            
-            
-            
-            
+   
             
             ScrollView {
                 
@@ -87,7 +86,7 @@ struct Chatbot: View {
             
             
             
-            
+            HStack{
             TextField("Type something", text: $messageText)
                 .font(.system(size: 25))
                 .padding()
@@ -96,6 +95,13 @@ struct Chatbot: View {
                 .onSubmit {
                     mandarResposta(message: messageText)
                 }
+            Image("paperplane")
+                .foregroundColor(.blue)
+                .padding()
+                .onTapGesture {
+                    mandarResposta(message: messageText)
+                }
+            }
             
             
         }

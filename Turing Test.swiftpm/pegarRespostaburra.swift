@@ -9,16 +9,16 @@ func pegarResposta(message: String,chat: [String]) -> String {
         return "Hello there"
     } else if tempMessage.contains("goodbye") {
         return "Talk to you later!"
-    } else if tempMessage.contains("color") || tempMessage.contains("blue") {
+    } else if (tempMessage.contains("color") || tempMessage.contains("blue")) && (modresposta == 0) {
         modresposta += 1
         return "well my favorite color is blue,it reminds me the sky and the sea,what about yours?"
     }
-    if modresposta == 1{
+     if modresposta == 1{
         modresposta += 1
         return "well,I don't know if you noticed but I'm a robot🤖 is that okay for you?"
 
     }
-   if modresposta == 2{
+    if modresposta == 2{
        modresposta += 1
         return "I mean you probably just unzipped me on your Ipad or mac right???????"
     }
@@ -29,13 +29,13 @@ func pegarResposta(message: String,chat: [String]) -> String {
     if modresposta == 4{
         modresposta += 1
         modresposta2 = 0
-        return "press the BUTTON"
+        return "press the BUTTON↗️"
     }
     if modresposta == 5{
         modresposta += 1
         modresposta2 = 0
         modresposta = 5
-        return "THE BUTTON-next"
+        return "THE BUTTON-Next↗️"
     }
     
     else {
