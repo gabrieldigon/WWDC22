@@ -68,11 +68,11 @@ func pegarRespostaSmart(message:String) -> String{
         draw = 0
             return desenho4
     }
-    else if message.contains("work") {
-        work += 1
-            return "basically my answers are based in a word you type, for example if you type pinaple I will answer something related to it"
+    else if newMessage.contains("work") {
+        work = 1
+            return "basically my answers are based in a word you type, for example if you type pineapple I will answer something related to it"
     }
-    else if message.contains("pinaple") && work == 1{
+    else if newMessage.contains("pineapple") && work == 1{
             return "LOL,you trusted a bot tha didn't pass the turing test🤣"
     }
     

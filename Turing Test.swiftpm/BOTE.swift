@@ -5,7 +5,7 @@ struct BOTE: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var irTelacheia = false
     @State private var messageText = ""
-    @State var messages: [String] = ["HELLO AGAIN! Want to chat?","press the ? button to see how smart I'm😌"]
+    @State var messages: [String] = ["HELLO AGAIN! Want to chat?","press the ? button to see how smart I Am😌"]
     var body: some View {
         
         
@@ -23,11 +23,11 @@ struct BOTE: View {
                 
                 Spacer()
                 
-                Image("person.circle")
+                Image("Frame 2")
                     .resizable()
                     .frame(width: 40, height: 40, alignment: .center)
                     .cornerRadius(20)
-                Text("Friend")
+                Text("B.O.T.E")
                     .font(.system(size: 40))
                     .frame(alignment:.center)
                 Spacer()

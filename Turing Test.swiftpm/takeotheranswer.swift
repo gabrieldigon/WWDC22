@@ -20,7 +20,7 @@ func pegarResposta(message: String,chat: [String]) -> String {
     }
     if modresposta == 2{
        modresposta += 1
-        return "I mean you probably just unzipped me on your Ipad or mac right???????"
+        return "I mean you probably just unzipped me on your Ipad right???"
     }
     if modresposta == 3{
         modresposta += 1
